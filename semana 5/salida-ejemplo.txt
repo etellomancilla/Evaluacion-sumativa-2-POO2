@@ -1,0 +1,90 @@
+[Zona de carga inicializada]
+
+========== Caso 1: ingreso del lote inicial de pedidos ==========
+Pedido #1 agregado. Destino: Santiago Centro
+Pedido #2 agregado. Destino: Providencia
+Pedido #3 agregado. Destino: Ñuñoa
+Pedido #4 agregado. Destino: Recoleta
+Pedido #5 agregado. Destino: Las Condes
+
+========== Inicio de la jornada: 3 repartidores trabajando en paralelo ==========
+[Repartidor - Juan] Inicia su turno.
+[Repartidor - Camila] Inicia su turno.
+[Repartidor - Pedro] Inicia su turno.
+[Repartidor - Camila] Retirando pedido #2... Destino: Providencia
+[Repartidor - Pedro] Retirando pedido #3... Destino: Ñuñoa
+[Repartidor - Juan] Retirando pedido #1... Destino: Santiago Centro
+[Repartidor - Pedro] Estado: EN_REPARTO
+[Repartidor - Camila] Estado: EN_REPARTO
+[Repartidor - Juan] Estado: EN_REPARTO
+[Repartidor - Juan] Entregando pedido #1...
+[Repartidor - Camila] Entregando pedido #2...
+[Repartidor - Pedro] Entregando pedido #3...
+[Repartidor - Juan] Estado: ENTREGADO
+[Repartidor - Juan] Retirando pedido #4... Destino: Recoleta
+[Repartidor - Juan] Estado: EN_REPARTO
+[Repartidor - Juan] Entregando pedido #4...
+
+========== Caso 2: llegada tardía de pedidos con la jornada en curso ==========
+Pedido #6 agregado. Destino: Maipú
+Pedido #7 agregado. Destino: La Florida
+
+========== Caso 3: validaciones del recurso compartido ==========
+[Zona de carga] Pedido #99 rechazado: ya se encuentra ENTREGADO.
+[Zona de carga] Pedido #1 rechazado: el identificador ya existe en la zona de carga.
+[Zona de carga] Pedido rechazado: referencia nula.
+[Zona de carga] Recepción de pedidos cerrada.
+[Repartidor - Pedro] Estado: ENTREGADO
+[Repartidor - Pedro] Retirando pedido #5... Destino: Las Condes
+[Repartidor - Pedro] Estado: EN_REPARTO
+[Repartidor - Pedro] Entregando pedido #5...
+[Repartidor - Camila] Estado: ENTREGADO
+[Repartidor - Camila] Retirando pedido #6... Destino: Maipú
+[Repartidor - Camila] Estado: EN_REPARTO
+[Repartidor - Camila] Entregando pedido #6...
+[Repartidor - Pedro] Estado: ENTREGADO
+[Repartidor - Pedro] Retirando pedido #7... Destino: La Florida
+[Repartidor - Pedro] Estado: EN_REPARTO
+[Repartidor - Pedro] Entregando pedido #7...
+[Repartidor - Juan] Estado: ENTREGADO
+[Repartidor - Juan] Termina su turno. Pedidos entregados: 2
+[Repartidor - Pedro] Estado: ENTREGADO
+[Repartidor - Pedro] Termina su turno. Pedidos entregados: 3
+[Repartidor - Camila] Estado: ENTREGADO
+[Repartidor - Camila] Termina su turno. Pedidos entregados: 2
+
+[Zona de carga vacía]
+
+========== Verificación final de la jornada ==========
+ID     DESTINO                      ESTADO       REPARTIDOR
+#1     Santiago Centro              ENTREGADO    Repartidor-Juan
+#2     Providencia                  ENTREGADO    Repartidor-Camila
+#3     Ñuñoa                        ENTREGADO    Repartidor-Pedro
+#4     Recoleta                     ENTREGADO    Repartidor-Juan
+#5     Las Condes                   ENTREGADO    Repartidor-Pedro
+#6     Maipú                        ENTREGADO    Repartidor-Camila
+#7     La Florida                   ENTREGADO    Repartidor-Pedro
+
+Entregas por repartidor:
+  - Juan: 2 pedido(s)
+  - Camila: 2 pedido(s)
+  - Pedro: 3 pedido(s)
+
+Pedidos recibidos en la zona de carga : 7
+Pedidos retirados (una sola vez)      : 7
+Pedidos entregados                    : 7
+Pedidos rechazados por validación     : 3
+Retiros dobles evitados               : 0
+Entregas duplicadas detectadas        : 0
+
+Todos los pedidos han sido entregados correctamente.
+
+========== Caso 4: prueba de alta concurrencia (500 pedidos / 12 repartidores) ==========
+Pedidos ingresados                    : 500
+Pedidos retirados (una sola vez)      : 500
+Pedidos en estado ENTREGADO           : 500
+Suma de entregas de los repartidores  : 500
+Retiros dobles evitados               : 0
+Entregas duplicadas detectadas        : 0
+
+Prueba de alta concurrencia superada: sin condiciones de carrera ni bloqueos.

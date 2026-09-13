@@ -1,0 +1,18 @@
+# Salida de compilación
+out/
+build/
+*.class
+
+# Archivos locales de IntelliJ IDEA
+.idea/workspace.xml
+.idea/shelf/
+.idea/usage.statistics.xml
+.idea/httpRequests/
+
+# Material del curso y entregables comprimidos
+*.docx
+*.zip
+*.rar
+
+# Sistema operativo
+.DS_Store

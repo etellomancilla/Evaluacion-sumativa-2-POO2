@@ -1,0 +1,5 @@
+# Archivos locales del IDE que no deben versionarse
+/workspace.xml
+/shelf/
+/usage.statistics.xml
+/httpRequests/

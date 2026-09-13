@@ -1,0 +1,11 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Main (estres)" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="cl.duoc.speedfast.Main" />
+    <module name="semana5" />
+    <option name="PROGRAM_PARAMETERS" value="estres" />
+    <option name="VM_PARAMETERS" value="-Dfile.encoding=UTF-8" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
